@@ -67,9 +67,9 @@ export async function getServerSideProps(context) {
     
     let response = await (await fetch("https://api.tetherland.com/currencies"))
     let time_response = await (await fetch("https://api.keybit.ir/time/"))
+    let api_time = await time_response.json()
     let data = await response.json()
     let price = data.data.currencies.USDT
-    let api_time = await time_response.json()
 
     
     return {
